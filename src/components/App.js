@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { handleGetUsers } from '../actions/users';
 import Login from './Login';
+import LoadingBar from 'react-redux-loading';
 
 class App extends Component {
 
@@ -15,12 +16,15 @@ class App extends Component {
         const { loading } = this.props;
 
         return (
-            <div className="container">
-                {loading === true
-                    ? <p>Loading...</p>
-                    : <Login />
-                }
-            </div>
+            <Fragment>
+                <LoadingBar />
+                <div className="container">
+                    {loading === true
+                        ? null
+                        : <Login />
+                    }
+                </div>
+            </Fragment>
         );
     }
 }
