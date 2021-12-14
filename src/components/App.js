@@ -12,12 +12,23 @@ class App extends Component {
 
 
     render() {
+        const { loading } = this.props;
+
         return (
-            <div >
-                <Login />
+            <div className="container">
+                {loading === true
+                    ? <p>Loading...</p>
+                    : <Login />
+                }
             </div>
         );
     }
 }
 
-export default connect()(App);
+function mapStateToProps({ users }) {
+    return {
+        loading: JSON.stringify(users) === "{}"
+    }
+}
+
+export default connect(mapStateToProps)(App);
