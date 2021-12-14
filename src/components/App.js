@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import { handleGetUsers } from '../actions/users';
 import Login from './Login';
 import LoadingBar from 'react-redux-loading';
+import Home from './Home';
+import { handleInitData } from '../actions/shared';
 
 class App extends Component {
 
     componentDidMount() {
         const { dispatch } = this.props;
-        dispatch(handleGetUsers());
+        dispatch(handleInitData());
     }
 
 
@@ -21,7 +23,7 @@ class App extends Component {
                 <div className="container">
                     {loading === true
                         ? null
-                        : <Login />
+                        : <Home />
                     }
                 </div>
             </Fragment>
@@ -29,9 +31,10 @@ class App extends Component {
     }
 }
 
-function mapStateToProps({ users }) {
+function mapStateToProps({ authedUser }) {
     return {
-        loading: JSON.stringify(users) === "{}"
+        // todo: loading should be finished just after loading init data (users & questions)
+        loading: authedUser === null
     }
 }
 

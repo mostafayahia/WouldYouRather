@@ -31,8 +31,36 @@ button {
     padding: 0.5em;
     border: 0.1em solid black;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .center {
     text-align: center;
+}
+
+.home {
+    border: 0.1em solid rgb(228, 215, 215);
+}
+
+.home-header {
+    display: flex;
+    flex-direction: row;
+    
+    background: yellow;
+}
+
+.home-header button {
+    font-size: 120%;
+    flex-grow: 0.5;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.active {
+    font-weight: bold;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 0.3em;
 }

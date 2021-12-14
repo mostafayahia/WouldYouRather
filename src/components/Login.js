@@ -22,7 +22,9 @@ class Login extends Component {
         const { dispatch } = this.props;
         const { username } = this.state;
 
-        dispatch(setAuthedUser(username))
+        dispatch(setAuthedUser(username));
+
+        // todo: redirect to the home 
     }
 
 
