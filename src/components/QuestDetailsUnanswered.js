@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-const OPTION_ONE = 'optionOne';
-const OPTION_TWO = 'optionTwo'
+import { OPTION_ONE, OPTION_TWO } from '../utils/options';
 
 
 class QuestDetailsUnanswered extends Component {

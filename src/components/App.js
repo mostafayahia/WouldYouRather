@@ -25,7 +25,7 @@ class App extends Component {
                 <div className="container">
                     {loading === true
                         ? null
-                        : <Quest id="am8ehyc8byjqgar0jgpub9" detailsType={FULL}/>
+                        : <Quest id="vthrdm985a262al8qx3do" detailsType={FULL}/>
                     }
                 </div>
             </Fragment>

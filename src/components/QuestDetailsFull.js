@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuestDetailsUnanswered from './QuestDetailsUnanswered';
+import QuestDetailsAnswered from './QuestDetailsAnswered';
 
 class QuestDetailsFull extends Component {
 
@@ -11,7 +12,7 @@ class QuestDetailsFull extends Component {
             <div>
                 {
                     answered
-                        ? null
+                        ? <QuestDetailsAnswered id={qid} />
                         : <QuestDetailsUnanswered id={qid} />
                 }
             </div>

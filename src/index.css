@@ -49,7 +49,8 @@ ul {
 }
 
 .avatar {
-    width: 10em;
+    width: 12em;
+    height: 12em;
     padding: 1em;
     border-radius: 50%;
 }
@@ -88,13 +89,13 @@ select {
     text-transform: capitalize;
 }
 
-/*=== question ====*/
-.quest {
+/*=== question & user ====*/
+.quest, .user {
     background-color: rgb(243, 235, 235);
     margin: 1.5em 0;
 }
 
-.quest-header {
+.quest-header, .user-header {
     background: rgb(192, 235, 235);
     border: 0.1em solid rgba(99, 96, 96, 0.2);
     padding-left: 1em;
@@ -102,18 +103,37 @@ select {
     font-size: 100%;
 }
 
-.quest-body {
+.quest-body, .user-body {
     display: flex;
     flex-direction: row;
+    align-items: center;
     
 }
 
-.quest-details {
+.quest-details, .user-details {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1em;
-    margin: 1em;
     border-left: 0.1em solid rgb(216, 216, 216);
+}
+
+.option {
+    font-size: 110%;
+    border: 0.1em solid rgb(168, 157, 157);
+    line-height: 1.3em;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+.authed-user-answer {
+    border: 0.3em solid green;
+    background-color: rgb(232, 245, 214);
+}
+
+.votes {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
 }
