@@ -1,8 +1,4 @@
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: aliceblue;
-}
+/* ==== general ==== */
 
 .container {
     max-width: 35em;
@@ -10,17 +6,10 @@ body {
     padding: 2em;
 }
 
-.login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-select {
-    font-size: 100%;
-    padding: 0.3em;
-    background: transparent;
-    border: 0.1em solid rgb(211, 211, 211);
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: aliceblue;
 }
 
 button {
@@ -38,6 +27,32 @@ button {
     text-align: center;
 }
 
+.active {
+    font-weight: bold;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 0.3em;
+}
+
+/* ==== login ==== */
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+select {
+    font-size: 100%;
+    padding: 0.3em;
+    background: transparent;
+    border: 0.1em solid rgb(211, 211, 211);
+}
+
+/*==== home ====*/
+
 .home {
     border: 0.1em solid rgb(228, 215, 215);
 }
@@ -45,7 +60,6 @@ button {
 .home-header {
     display: flex;
     flex-direction: row;
-    
     background: yellow;
 }
 
@@ -54,13 +68,4 @@ button {
     flex-grow: 0.5;
     margin: 0;
     text-transform: capitalize;
-}
-
-.active {
-    font-weight: bold;
-}
-
-ul li {
-    list-style-type: none;
-    margin: 0.3em;
 }
