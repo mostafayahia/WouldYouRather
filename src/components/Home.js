@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Question from './Question';
+import Quest from './Quest';
 
 const UNANSWERED = 'unanswered';
 const ANSWERED = 'answered';
@@ -47,7 +47,7 @@ class Home extends Component {
                 <div>
                     {
                         questionsIds.map(qid => {
-                            return <Question key={qid} id={qid}></Question>
+                            return <Quest key={qid} id={qid}></Quest>
                         })
                     }
                 </div>
