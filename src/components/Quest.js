@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import QuestDetailsPreview from './QuestDetailsPreview';
+import { PREVIEW, ANSWERED, UNANSWERED } from '../utils/quest_details_types';
 
 class Quest extends Component {
     render() {
-        const { user, question } = this.props;
-        console.log('user', user);
-        console.log('question', question);
+        const { user, quest, detailsType } = this.props;
 
         return (
             <div className="quest">
@@ -16,19 +16,33 @@ class Quest extends Component {
                     <img src={user.avatarURL}
                         className="avatar"
                         alt={`Avatar of ${user.name}`} />
-                    <div className="quest-details">QUESTION DETAILS</div>
+                    <div className="quest-details">
+                        {
+                            detailsType === PREVIEW
+                                ? <QuestDetailsPreview quest={quest} />
+                                : null
+                        }
+                    </div>
+
                 </div>
             </div>
         )
     }
 }
 
-function mapStateToProps({ questions, users }, { id }) {
-    const question = questions[id];
+function mapStateToProps({ questions, users, authedUser }, { id, detailsType }) {
+    const quest = questions[id];
+    console.log('detailstype in map', detailsType);
+    detailsType = detailsType || (
+        Object.keys(authedUser.answers).includes(id)
+            ? ANSWERED
+            : UNANSWERED
+    );
 
     return {
-        question,
-        user: users[question.author]
+        quest,
+        detailsType,
+        user: users[quest.author]
     };
 }
 
