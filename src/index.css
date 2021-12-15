@@ -41,6 +41,12 @@ ul {
     margin: 0;
 }
 
+.avatar {
+    width: 7em;
+    padding: 1em;
+    border-radius: 50%;
+}
+
 /* ==== login ==== */
 
 .login {
@@ -65,7 +71,7 @@ select {
 .home-header {
     display: flex;
     flex-direction: row;
-    background: yellow;
+    background: rgb(243, 243, 193);
 }
 
 .home-header button {
@@ -76,8 +82,27 @@ select {
 }
 
 /*=== question ====*/
-.question {
+.quest {
     background-color: rgb(243, 235, 235);
-    margin: 1em;
+    margin: 1.5em 0;
+}
+
+.quest-header {
+    background: rgb(192, 235, 235);
+    border: 0.1em solid rgba(99, 96, 96, 0.2);
+    padding-left: 1em;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.quest-body {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.quest-details {
     padding: 1em;
+    margin: 1em;
+    border-left: 0.1em solid rgb(216, 216, 216);
 }

@@ -6,10 +6,16 @@ class Question extends Component {
         const { user, question } = this.props;
         console.log('user', user);
         console.log('question', question);
-        
+
         return (
-            <div className="question">
-                QUESTION
+            <div className="quest">
+                <div className="quest-header">
+                    <p>{user.name} asked:</p>
+                </div>
+                <div className="quest-body">
+                    <img src={user.avatarURL} className="avatar" />
+                    <div className="quest-details">QUESTION DETAILS</div>
+                </div>
             </div>
         )
     }
