@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { handleGetUsers } from '../actions/users';
 import Login from './Login';
 import LoadingBar from 'react-redux-loading';
 import Home from './Home';
