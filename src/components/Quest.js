@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuestDetailsPreview from './QuestDetailsPreview';
-import { PREVIEW, ANSWERED, UNANSWERED } from '../utils/quest_details_types';
+import { PREVIEW, FULL } from '../utils/quest_details_types';
+import QuestDetailsFull from './QuestDetailsFull';
 
 class Quest extends Component {
     render() {
@@ -20,7 +21,11 @@ class Quest extends Component {
                         {
                             detailsType === PREVIEW
                                 ? <QuestDetailsPreview quest={quest} />
-                                : null
+                                : (
+                                    detailsType === FULL
+                                        ? <QuestDetailsFull id={quest.id} />
+                                        : null
+                                )
                         }
                     </div>
 
@@ -30,14 +35,8 @@ class Quest extends Component {
     }
 }
 
-function mapStateToProps({ questions, users, authedUser }, { id, detailsType }) {
+function mapStateToProps({ questions, users }, { id, detailsType }) {
     const quest = questions[id];
-    console.log('detailstype in map', detailsType);
-    detailsType = detailsType || (
-        Object.keys(authedUser.answers).includes(id)
-            ? ANSWERED
-            : UNANSWERED
-    );
 
     return {
         quest,

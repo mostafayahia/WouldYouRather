@@ -4,6 +4,9 @@ import Login from './Login';
 import LoadingBar from 'react-redux-loading';
 import Home from './Home';
 import { handleInitData } from '../actions/shared';
+import QuestDetailsFull from './QuestDetailsFull';
+import { FULL } from '../utils/quest_details_types';
+import Quest from './Quest';
 
 class App extends Component {
 
@@ -22,7 +25,7 @@ class App extends Component {
                 <div className="container">
                     {loading === true
                         ? null
-                        : <Home />
+                        : <Quest id="am8ehyc8byjqgar0jgpub9" detailsType={FULL}/>
                     }
                 </div>
             </Fragment>
