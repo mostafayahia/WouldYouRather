@@ -13,7 +13,9 @@ class Quest extends Component {
                     <p>{user.name} asked:</p>
                 </div>
                 <div className="quest-body">
-                    <img src={user.avatarURL} className="avatar" />
+                    <img src={user.avatarURL}
+                        className="avatar"
+                        alt={`Avatar of ${user.name}`} />
                     <div className="quest-details">QUESTION DETAILS</div>
                 </div>
             </div>
