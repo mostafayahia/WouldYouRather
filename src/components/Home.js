@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Question from './Question';
 
 const UNANSWERED = 'unanswered';
 const ANSWERED = 'answered';
@@ -43,13 +44,13 @@ class Home extends Component {
                         Answered
                     </button>
                 </div>
-                <ul>
+                <div>
                     {
                         questionsIds.map(qid => {
-                            return <li key={qid}>Question ID: {qid}</li>
+                            return <Question key={qid} id={qid}></Question>
                         })
                     }
-                </ul>
+                </div>
             </div>
         )
     }
