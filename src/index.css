@@ -119,6 +119,15 @@ select {
     border-left: 0.1em solid rgb(216, 216, 216);
 }
 
+.user-details {
+    font-weight: bold;
+    font-size: 110%;
+}
+
+.user-details p {
+    margin: 0.5em;
+}
+
 .option {
     font-size: 110%;
     border: 0.1em solid rgb(168, 157, 157);

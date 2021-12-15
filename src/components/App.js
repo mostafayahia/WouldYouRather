@@ -7,6 +7,7 @@ import { handleInitData } from '../actions/shared';
 import QuestDetailsFull from './QuestDetailsFull';
 import { FULL } from '../utils/quest_details_types';
 import Quest from './Quest';
+import Leaderboard from './Leaderboard';
 
 class App extends Component {
 
@@ -25,7 +26,7 @@ class App extends Component {
                 <div className="container">
                     {loading === true
                         ? null
-                        : <Quest id="vthrdm985a262al8qx3do" detailsType={FULL}/>
+                        : <Leaderboard />
                     }
                 </div>
             </Fragment>
