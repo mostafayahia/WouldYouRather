@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { OPTION_ONE, OPTION_TWO } from '../utils/options';
+import { handleAddQuestionAnswer } from '../actions/shared';
 
 
 class QuestDetailsUnanswered extends Component {
@@ -17,10 +18,17 @@ class QuestDetailsUnanswered extends Component {
     handleSubmit = e => {
         e.preventDefault();
 
-        console.log('answer', this.state.answer)
+        const { answer } = this.state;
+        const { authedUser, quest, dispatch } = this.props;
+        const { id } = quest;
 
-        // todo: save user answer
-        // todo: redirect to question path
+        console.log('data', {
+            answer,
+            authedUser,
+            id,
+        })
+
+        dispatch(handleAddQuestionAnswer({ authedUser, qid: id, answer }));
     }
 
 
