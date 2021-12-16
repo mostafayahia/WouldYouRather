@@ -48,7 +48,11 @@ class Home extends Component {
                 <div>
                     {
                         questionsIds.map(qid => {
-                            return <Quest detailsType={PREVIEW} key={qid} id={qid}></Quest>
+                            return <Quest detailsType={PREVIEW} key={qid} match={{
+                                params: {
+                                    id: qid,
+                                }
+                            }}></Quest>
                         })
                     }
                 </div>

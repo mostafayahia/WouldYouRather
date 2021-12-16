@@ -1,22 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function QuestDetailsPreview(props) {
-    const { optionOne, optionTwo } = props.quest;
-
-    const handleViewQuest = e => {
-        e.prevnetDefault();
-
-        // todo: redirect to question path
-    }
+    const { optionOne, optionTwo, id } = props.quest;
 
     return (
         <div>
             <p>
                 {
-                    getPreviewFromOptionText(optionOne.text) + 
+                    getPreviewFromOptionText(optionOne.text) +
                     " / " + getPreviewFromOptionText(optionTwo.text)}
             </p>
-            <button onClick={handleViewQuest}>View Question</button>
+            <Link class="link" to={`/questions/${id}`}>
+                View Question
+            </Link>
         </div>
     );
 }

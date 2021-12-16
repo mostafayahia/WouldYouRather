@@ -7,6 +7,7 @@ import QuestDetailsFull from './QuestDetailsFull';
 class Quest extends Component {
     render() {
         const { user, quest, detailsType } = this.props;
+        console.log('detailstype', detailsType);
 
         return (
             <div className="quest">
@@ -22,11 +23,7 @@ class Quest extends Component {
                         {
                             detailsType === PREVIEW
                                 ? <QuestDetailsPreview quest={quest} />
-                                : (
-                                    detailsType === FULL
-                                        ? <QuestDetailsFull id={quest.id} />
-                                        : null
-                                )
+                                : <QuestDetailsFull id={quest.id} />
                         }
                     </div>
 
@@ -36,7 +33,12 @@ class Quest extends Component {
     }
 }
 
-function mapStateToProps({ questions, users }, { id, detailsType }) {
+function mapStateToProps({ questions, users }, props) {
+    console.log('props', props);
+
+    const { detailsType } = props;
+    const id = props.match.params.id;
+    
     const quest = questions[id];
 
     return {

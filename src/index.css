@@ -19,7 +19,7 @@ body {
     background-color: aliceblue;
 }
 
-button {
+.link, button {
     display: block;
     margin: 1em;
     background-color: transparent;
@@ -28,6 +28,11 @@ button {
     border: 0.1em solid black;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
 }
 
 .center {
@@ -212,5 +217,6 @@ select {
     display: inline-block;
     border:none;
     font-weight: bold;
-    font-size: 80%;
+    font-size: 100% !important;
+    text-transform: uppercase;
 }
