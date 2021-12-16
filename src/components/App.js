@@ -1,15 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import Login from './Login';
 import LoadingBar from 'react-redux-loading';
 import Home from './Home';
 import { handleInitData } from '../actions/shared';
-import QuestDetailsFull from './QuestDetailsFull';
-import { FULL } from '../utils/quest_details_types';
 import Quest from './Quest';
 import Leaderboard from './Leaderboard';
 import QuestNew from './QuestNew';
-import QuestNotFound from './QuestNotFound';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 class App extends Component {
 
@@ -23,15 +20,22 @@ class App extends Component {
         const { loading } = this.props;
 
         return (
-            <Fragment>
-                <LoadingBar />
-                <div className="container">
-                    {loading === true
-                        ? null
-                        : <QuestNotFound />
-                    }
-                </div>
-            </Fragment>
+            <BrowserRouter>
+                <Fragment>
+                    <LoadingBar />
+                    <div className="container">
+                        {loading === true
+                            ? null
+                            : <div>
+                                <Route path="/" exact component={Home} />
+                                <Route path="/questions/:id" component={Quest} />
+                                <Route path="/add" component={QuestNew} />
+                                <Route path="/leaderboard" component={Leaderboard} />
+                            </div>
+                        }
+                    </div>
+                </Fragment>
+            </BrowserRouter>
         );
     }
 }
