@@ -30,7 +30,6 @@ class QuestDetailsUnanswered extends Component {
 
         return (
             <div>
-                <h4>Would You Rather</h4>
                 <input type="radio"
                     name="answer"
                     value={OPTION_ONE}

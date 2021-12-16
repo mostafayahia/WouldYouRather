@@ -18,6 +18,7 @@ class Quest extends Component {
                         className="avatar"
                         alt={`Avatar of ${user.name}`} />
                     <div className="quest-details">
+                        <h4>Would You Rather</h4>
                         {
                             detailsType === PREVIEW
                                 ? <QuestDetailsPreview quest={quest} />
