@@ -25,7 +25,7 @@ class QuestDetailsAnswered extends Component {
                         {optionTwo.text}
                     </p>
                     <p className="votes">
-                        votes: {`${optionOneVotes} / ${totalVotes} (${getPercentage(optionTwoVotes, totalVotes)}%)`}
+                        votes: {`${optionTwoVotes} / ${totalVotes} (${getPercentage(optionTwoVotes, totalVotes)}%)`}
                     </p>
                 </div>
             </div>
