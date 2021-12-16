@@ -6,7 +6,7 @@ import { handleInitData } from '../actions/shared';
 import Quest from './Quest';
 import Leaderboard from './Leaderboard';
 import QuestNew from './QuestNew';
-import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom';
 import Login from './Login';
 import { unsetAuthedUser } from '../actions/authedUser';
 
@@ -18,7 +18,6 @@ class App extends Component {
     }
 
     handleLogout = e => {
-        e.preventDefault();
 
         const { dispatch } = this.props;
         dispatch(unsetAuthedUser());
@@ -41,7 +40,7 @@ class App extends Component {
                                 ? null
                                 : <div className="authed-user">
                                     <p>Hello {authedUserName},</p>
-                                    <button className="logout" onClick={this.handleLogout}>Logout</button>
+                                    <Link to="/" className="logout" onClick={this.handleLogout}>Logout</Link>
                                 </div>
                         }
                     </div>
