@@ -185,6 +185,7 @@ select {
     max-width: 50em;
     margin: 0 auto;
     background-color: rgb(224, 241, 247);
+    display: flex;
 }
 .nav a {
     display: inline-block;
@@ -193,4 +194,23 @@ select {
     color: black;
     font-size: 120%;
     
+}
+
+.authed-user {
+    flex-grow: 1;
+    text-align: right;
+    padding: 0em;
+}
+
+.authed-user p {
+    display: inline-block;
+    margin: 0;
+    font-size: 90%;
+}
+
+.logout {
+    display: inline-block;
+    border:none;
+    font-weight: bold;
+    font-size: 80%;
 }
