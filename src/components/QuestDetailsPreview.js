@@ -13,15 +13,15 @@ function QuestDetailsPreview(props) {
         <div>
             <p>
                 {
-                    getPreviewFromOption(optionOne.text) + 
-                    " / " + getPreviewFromOption(optionTwo.text)}
+                    getPreviewFromOptionText(optionOne.text) + 
+                    " / " + getPreviewFromOptionText(optionTwo.text)}
             </p>
             <button onClick={handleViewQuest}>View Question</button>
         </div>
     );
 }
 
-function getPreviewFromOption(optionText) {
+function getPreviewFromOptionText(optionText) {
     if (!optionText) {
         return null;
     }
