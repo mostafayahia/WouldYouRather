@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { OPTION_ONE, OPTION_TWO } from '../utils/options';
+import { withRouter } from 'react-router-dom';
+import { handleAddQuestion } from '../actions/shared';
 
 class QuestNew extends Component {
 
@@ -13,8 +15,17 @@ class QuestNew extends Component {
     handleSubmit = e => {
         e.preventDefault();
 
-        // todo: add question in db & store
-        // todo: redirect to home page
+        const { dispatch, history, authedUser } = this.props;
+        const { optionOne, optionTwo } = this.state;
+
+        dispatch(handleAddQuestion({
+            optionOneText: optionOne,
+            optionTwoText: optionTwo,
+            author: authedUser,
+        }))
+
+        // redirect to home page
+        history.push('/');
     }
 
     handleChange = e => {
@@ -54,5 +65,5 @@ function mapStateToProps({ authedUser }) {
     }
 }
 
-export default connect(mapStateToProps)(QuestNew);
+export default withRouter(connect(mapStateToProps)(QuestNew));
 
