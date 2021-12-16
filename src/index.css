@@ -167,3 +167,11 @@ select {
     padding: 1em;
     border: 0.1em solid rgb(207, 196, 196);
 }
+
+/* question not found */
+.quest-not-found {
+    border: 0.1em solid rgb(223, 211, 211);
+    font-size: 120%;
+    padding: 1em;
+    background: rgb(255, 230, 234);
+}

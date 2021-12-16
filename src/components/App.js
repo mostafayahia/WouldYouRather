@@ -9,6 +9,7 @@ import { FULL } from '../utils/quest_details_types';
 import Quest from './Quest';
 import Leaderboard from './Leaderboard';
 import QuestNew from './QuestNew';
+import QuestNotFound from './QuestNotFound';
 
 class App extends Component {
 
@@ -27,7 +28,7 @@ class App extends Component {
                 <div className="container">
                     {loading === true
                         ? null
-                        : <QuestNew />
+                        : <QuestNotFound />
                     }
                 </div>
             </Fragment>
