@@ -159,7 +159,8 @@ select {
     margin: 0;
 }
 
-/* new question */
+/*=== new question ===*/
+
 .quest-new {
     display: flex;
     flex-direction: column;
@@ -168,10 +169,28 @@ select {
     border: 0.1em solid rgb(207, 196, 196);
 }
 
-/* question not found */
+/*=== question not found ===*/
+
 .quest-not-found {
     border: 0.1em solid rgb(223, 211, 211);
     font-size: 120%;
     padding: 1em;
     background: rgb(255, 230, 234);
+}
+
+/*=== nav ===*/
+.nav {
+    border: 0.1em solid rgb(207, 206, 206);
+    margin-bottom: 1em;
+    max-width: 50em;
+    margin: 0 auto;
+    background-color: rgb(224, 241, 247);
+}
+.nav a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em;
+    color: black;
+    font-size: 120%;
+    
 }

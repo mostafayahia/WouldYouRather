@@ -6,6 +6,7 @@ import { handleInitData } from '../actions/shared';
 import Quest from './Quest';
 import Leaderboard from './Leaderboard';
 import QuestNew from './QuestNew';
+import Nav from './Nav';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
             <BrowserRouter>
                 <Fragment>
                     <LoadingBar />
+                    <Nav />
                     <div className="container">
                         {loading === true
                             ? null
