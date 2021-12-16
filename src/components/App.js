@@ -69,7 +69,7 @@ function mapStateToProps({ authedUser, users }) {
         : users[authedUser].name;
 
     return {
-        loading: JSON.stringify(users) === {},
+        loading: JSON.stringify(users) === "{}",
         authedUserName,
     }
 }
