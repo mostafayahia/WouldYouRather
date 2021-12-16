@@ -8,6 +8,7 @@ import Leaderboard from './Leaderboard';
 import QuestNew from './QuestNew';
 import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import Login from './Login';
+import { unsetAuthedUser } from '../actions/authedUser';
 
 class App extends Component {
 
@@ -19,8 +20,8 @@ class App extends Component {
     handleLogout = e => {
         e.preventDefault();
 
-        // todo: update authedUser in the store
-        // todo: redirect to login page
+        const { dispatch } = this.props;
+        dispatch(unsetAuthedUser());
     }
 
 
