@@ -24,7 +24,7 @@ class Login extends Component {
 
         dispatch(setAuthedUser(username));
 
-        // todo: redirect to the home 
+        // todo: redirect to whatever link in addressbar comes from 
     }
 
 

@@ -7,6 +7,7 @@ import Quest from './Quest';
 import Leaderboard from './Leaderboard';
 import QuestNew from './QuestNew';
 import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import Login from './Login';
 
 class App extends Component {
 
@@ -35,7 +36,7 @@ class App extends Component {
                         <NavLink to="/add">New Question</NavLink>
                         <NavLink to="/leaderboard">Leaderboard</NavLink>
                         {
-                            loading === true
+                            authedUserName === null
                                 ? null
                                 : <div className="authed-user">
                                     <p>Hello {authedUserName},</p>
@@ -46,12 +47,14 @@ class App extends Component {
                     <div className="container">
                         {loading === true
                             ? null
-                            : <div>
-                                <Route path="/" exact component={Home} />
-                                <Route path="/questions/:id" component={Quest} />
-                                <Route path="/add" component={QuestNew} />
-                                <Route path="/leaderboard" component={Leaderboard} />
-                            </div>
+                            : authedUserName === null
+                                ? <Login />
+                                : <div>
+                                    <Route path="/" exact component={Home} />
+                                    <Route path="/questions/:id" component={Quest} />
+                                    <Route path="/add" component={QuestNew} />
+                                    <Route path="/leaderboard" component={Leaderboard} />
+                                </div>
                         }
                     </div>
                 </Fragment>
@@ -61,13 +64,12 @@ class App extends Component {
 }
 
 function mapStateToProps({ authedUser, users }) {
-    const authedUserName = authedUser === null 
+    const authedUserName = authedUser === null
         ? null
         : users[authedUser].name;
-    
+
     return {
-        // todo: loading should be finished just after loading init data (users & questions)
-        loading: authedUser === null,
+        loading: JSON.stringify(users) === {},
         authedUserName,
     }
 }
