@@ -7,7 +7,7 @@ class Leaderboard extends Component {
         const { users } = this.props;
 
         return users.map(user => (
-            <div className="user">
+            <div className="user" key={user.id}>
                 <div className="user-header">
                     <p>{user.name}</p>
                 </div>
