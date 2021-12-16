@@ -26,7 +26,7 @@ class App extends Component {
                 <div className="container">
                     {loading === true
                         ? null
-                        : <Leaderboard />
+                        : <Login />
                     }
                 </div>
             </Fragment>

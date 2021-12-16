@@ -10,7 +10,7 @@ class Login extends Component {
 
     handleChange = e => {
         const { value } = e.target;
-        
+
         this.setState(() => ({
             username: value
         }))
@@ -34,16 +34,20 @@ class Login extends Component {
 
         return (
             <div className="login">
-                <h3 className="center">Please, Sign in to continue</h3>
-                <select onChange={this.handleChange}>
-                    <option value="">Choose Username</option>
-                    {
-                        users.map(u => {
-                            return <option key={u.id} value={u.id}>{u.name}</option> 
-                        })
-                    }
-                </select>
-                <button disabled={username === ''} onClick={this.handleSignIn}>Sign in</button>
+                <h3 className="center login-header">Would You Rather</h3>
+                
+                <div className="login-body">
+                    <h4 className="center">Please, Sign in to continue</h4>
+                    <select onChange={this.handleChange}>
+                        <option value="">Choose Username</option>
+                        {
+                            users.map(u => {
+                                return <option key={u.id} value={u.id}>{u.name}</option>
+                            })
+                        }
+                    </select>
+                    <button disabled={username === ''} onClick={this.handleSignIn}>Sign in</button>
+                </div>
             </div>
         );
     }
