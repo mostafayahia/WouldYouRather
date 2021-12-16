@@ -41,7 +41,11 @@ function mapStateToProps({ authedUser, questions }, { id }) {
     const quest = questions[id];
     const authedUserAns = quest[OPTION_ONE].votes.includes(authedUser)
         ? OPTION_ONE
-        : OPTION_TWO;
+        : (
+            quest[OPTION_TWO].votes.includes(authedUser)
+                ? OPTION_TWO
+                : ''
+        );
     const optionOneVotes = quest[OPTION_ONE].votes.length;
     const optionTwoVotes = quest[OPTION_TWO].votes.length;
     const totalVotes = optionOneVotes + optionTwoVotes;
