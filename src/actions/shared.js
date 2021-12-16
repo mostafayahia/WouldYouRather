@@ -1,6 +1,5 @@
 import { getQuestions, getUsers } from '../utils/api';
 import { showLoading, hideLoading } from 'react-redux-loading';
-import { setAuthedUser } from './authedUser';
 import { receiveUsers } from './users';
 import { receiveQuestions } from './questions';
 
