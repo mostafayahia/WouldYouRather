@@ -19,8 +19,8 @@ body {
     background-color: aliceblue;
 }
 
-.link, button {
-    display: block;
+.btn, button {
+    display: inline-block;
     margin: 1em;
     background-color: transparent;
     font-size: 100%;
@@ -30,7 +30,7 @@ body {
     cursor: pointer;
 }
 
-.link {
+.btn {
     text-decoration: none;
     color: black;
 }
@@ -216,7 +216,9 @@ select {
 .logout {
     display: inline-block;
     border:none;
-    font-weight: bold;
+    border: 0.1em solid black;
+    padding: 0.3em !important;
+    margin: 0.7em;
     font-size: 100% !important;
     text-transform: uppercase;
 }

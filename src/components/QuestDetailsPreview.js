@@ -11,7 +11,7 @@ function QuestDetailsPreview(props) {
                     getPreviewFromOptionText(optionOne.text) +
                     " / " + getPreviewFromOptionText(optionTwo.text)}
             </p>
-            <Link className="link" to={`/questions/${id}`}>
+            <Link className="btn" to={`/questions/${id}`}>
                 View Question
             </Link>
         </div>

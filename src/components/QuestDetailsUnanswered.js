@@ -42,7 +42,7 @@ class QuestDetailsUnanswered extends Component {
                     name="answer"
                     value={OPTION_TWO}
                     onChange={this.handleAnswer} />
-                {optionTwo.text}
+                {optionTwo.text}<br />
                 <button onClick={this.handleSubmit}>Submit</button>
             </div>
         )
