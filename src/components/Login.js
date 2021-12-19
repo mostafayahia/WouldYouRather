@@ -23,8 +23,6 @@ class Login extends Component {
         const { username } = this.state;
 
         dispatch(setAuthedUser(username));
-
-        // todo: redirect to whatever link in addressbar comes from 
     }
 
 
