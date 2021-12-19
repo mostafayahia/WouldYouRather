@@ -8,7 +8,6 @@ import QuestNotFound from './QuestNotFound'
 class Quest extends Component {
     render() {
         const { user, quest, detailsType } = this.props;
-        console.log('detailstype', detailsType);
 
         return quest
             ? <div className="quest">

@@ -22,12 +22,6 @@ class QuestDetailsUnanswered extends Component {
         const { authedUser, quest, dispatch } = this.props;
         const { id } = quest;
 
-        console.log('data', {
-            answer,
-            authedUser,
-            id,
-        })
-
         dispatch(handleAddQuestionAnswer({ authedUser, qid: id, answer }));
     }
 
