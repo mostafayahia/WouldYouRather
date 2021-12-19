@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { OPTION_ONE, OPTION_TWO } from '../utils/options';
-import { handleAddQuestionAnswer } from '../actions/shared';
+import { handleAddQuestionAnswer } from '../actions/questions';
 
 
 class QuestDetailsUnanswered extends Component {

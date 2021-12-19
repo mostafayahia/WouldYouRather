@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { OPTION_ONE, OPTION_TWO } from '../utils/options';
 import { withRouter } from 'react-router-dom';
-import { handleAddQuestion } from '../actions/shared';
+import { handleAddQuestion } from '../actions/questions';
 
 class QuestNew extends Component {
 
