@@ -136,6 +136,13 @@ select {
     border-left: 0.1em solid rgb(216, 216, 216);
 }
 
+/* hacky but it works */
+.quest-details > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .user-details {
     font-weight: bold;
     font-size: 110%;

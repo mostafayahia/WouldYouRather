@@ -33,17 +33,21 @@ class QuestDetailsUnanswered extends Component {
 
         return (
             <div>
-                <input type="radio"
-                    name="answer"
-                    value={OPTION_ONE}
-                    onChange={this.handleAnswer}
-                    defaultChecked />
-                {optionOne.text}<br />
-                <input type="radio"
-                    name="answer"
-                    value={OPTION_TWO}
-                    onChange={this.handleAnswer} />
-                {optionTwo.text}<br />
+                <div>
+                    <input type="radio"
+                        name="answer"
+                        value={OPTION_ONE}
+                        onChange={this.handleAnswer}
+                        defaultChecked />
+                    {optionOne.text}
+                </div>
+                <div>
+                    <input type="radio"
+                        name="answer"
+                        value={OPTION_TWO}
+                        onChange={this.handleAnswer} />
+                    {optionTwo.text}
+                </div>
                 <button onClick={this.handleSubmit}>Submit</button>
             </div>
         )

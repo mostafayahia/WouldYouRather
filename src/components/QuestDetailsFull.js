@@ -10,13 +10,10 @@ class QuestDetailsFull extends Component {
         const { qid, answered } = this.props;
 
         return (
-            <div>
-                {
-                    answered
-                        ? <QuestDetailsAnswered id={qid} />
-                        : <QuestDetailsUnanswered id={qid} />
-                }
-            </div>
+            answered
+                ? <QuestDetailsAnswered id={qid} />
+                : <QuestDetailsUnanswered id={qid} />
+
         )
 
     }
