@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { OPTION_ONE, OPTION_TWO } from '../utils/options';
 import { withRouter } from 'react-router-dom';
 import { handleAddQuestion } from '../actions/questions';
+import PropTypes from 'prop-types';
 
 class QuestNew extends Component {
 
@@ -63,6 +64,12 @@ function mapStateToProps({ authedUser }) {
     return {
         authedUser,
     }
+}
+
+QuestNew.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired,
+    authedUser: PropTypes.string.isRequired,
 }
 
 export default withRouter(connect(mapStateToProps)(QuestNew));

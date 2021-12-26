@@ -9,6 +9,7 @@ import QuestNew from './QuestNew';
 import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom';
 import Login from './Login';
 import { unsetAuthedUser } from '../actions/authedUser';
+import PropTypes from 'prop-types';
 
 class App extends Component {
 
@@ -72,6 +73,12 @@ function mapStateToProps({ authedUser, users }) {
         loading: JSON.stringify(users) === "{}",
         authedUserName,
     }
+}
+
+App.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    authedUserName: PropTypes.string,
+    loading: PropTypes.bool.isRequired,   
 }
 
 export default connect(mapStateToProps)(App);

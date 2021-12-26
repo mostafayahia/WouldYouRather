@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Quest from './Quest';
 import { PREVIEW } from '../utils/quest_details_types';
+import PropTypes from 'prop-types'
 
 const CAT_ANSWERED = 'ANSWERED';
 const CAT_UNANSWERED = 'UNANSWERD'
@@ -72,6 +73,11 @@ function mapStateToProps({ users, questions, authedUser }) {
         answeredQuestionsIds,
         unansweredQuestionsIds
     }
+}
+
+Home.propTypes = {
+    answeredQuestionsIds: PropTypes.array.isRequired,
+    unansweredQuestionsIds: PropTypes.array.isRequired,
 }
 
 export default connect(mapStateToProps)(Home);

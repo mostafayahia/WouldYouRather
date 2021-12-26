@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { OPTION_ONE, OPTION_TWO } from '../utils/options';
+import PropTypes from 'prop-types';
 
 class QuestDetailsAnswered extends Component {
     render() {
@@ -58,6 +59,14 @@ function mapStateToProps({ authedUser, questions }, { id }) {
         totalVotes,
     }
 
+}
+
+QuestDetailsAnswered.propTypes = {
+    quest: PropTypes.object.isRequired,
+    authedUserAns: PropTypes.string.isRequired,
+    optionOneVotes: PropTypes.number.isRequired,
+    optionTwoVotes: PropTypes.number.isRequired,
+    totalVotes: PropTypes.number.isRequired,
 }
 
 export default connect(mapStateToProps)(QuestDetailsAnswered);

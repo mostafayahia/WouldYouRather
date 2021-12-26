@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function QuestDetailsPreview(props) {
     const { optionOne, optionTwo, id } = props.quest;
@@ -34,6 +35,10 @@ function getPreviewFromOptionText(optionText) {
     } else {
         return `...${[arr[1], arr[2]].join(' ')}...`
     }
+}
+
+QuestDetailsPreview.propTypes = {
+    quest: PropTypes.object.isRequired,
 }
 
 export default QuestDetailsPreview;

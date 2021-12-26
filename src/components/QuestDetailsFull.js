@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuestDetailsUnanswered from './QuestDetailsUnanswered';
 import QuestDetailsAnswered from './QuestDetailsAnswered';
+import PropTypes from 'prop-types';
 
 class QuestDetailsFull extends Component {
 
@@ -29,6 +30,11 @@ function mapStateToProps({ authedUser, questions, users }, { id }) {
         answered,
         qid: id
     }
+}
+
+QuestDetailsFull.propTypes = {
+    qid: PropTypes.string.isRequired,
+    answered: PropTypes.bool.isRequired,
 }
 
 export default connect(mapStateToProps)(QuestDetailsFull);

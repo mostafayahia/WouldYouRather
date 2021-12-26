@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import QuestDetailsPreview from './QuestDetailsPreview';
 import { PREVIEW } from '../utils/quest_details_types';
 import QuestDetailsFull from './QuestDetailsFull';
-import QuestNotFound from './QuestNotFound'
+import QuestNotFound from './QuestNotFound';
+import PropTypes from 'prop-types';
 
 class Quest extends Component {
     render() {
@@ -47,6 +48,12 @@ function mapStateToProps({ questions, users }, props) {
         detailsType,
         user,
     };
+}
+
+Quest.propTypes = {
+    user: PropTypes.object.isRequired,
+    detailsType: PropTypes.string,
+    quest: PropTypes.object.isRequired,
 }
 
 export default connect(mapStateToProps)(Quest);
