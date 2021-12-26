@@ -51,9 +51,9 @@ function mapStateToProps({ questions, users }, props) {
 }
 
 Quest.propTypes = {
-    user: PropTypes.object.isRequired,
+    user: PropTypes.object,
     detailsType: PropTypes.string,
-    quest: PropTypes.object.isRequired,
+    quest: PropTypes.object,
 }
 
 export default connect(mapStateToProps)(Quest);
